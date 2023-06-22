@@ -48,18 +48,47 @@ myButton.addEventListener ('click',
             const newCell = document.createElement('div');
             newCell.append(i);
             newCell.classList.add('cell');
-            
-            // Quando clicco su ogni cella, il background si toglie
-            newCell.addEventListener ('click', function () {
-
-                this.classList.add ('active');
-                // Stampo in console il numero che clicco
-                console.log(this.innerHTML);
-            });
+                        
 
             gridContainer.append(newCell);
+
+            
         }
 
+        newCell.addEventListener ('click', function () {
+            if (randomNumbers.includes(this.innerHTML)) {
+                newCell.classList.add('red');
+            }
+
+        });
+
+        // Genero 16 numeri casuali 
+
+        const randomNumbers = [];
+
+        const x = 16;
+
+        while (randomNumbers.length < x) {
+            const aNumber = randomNumber(1, 100);
+            console.log('aNumber', aNumber, typeof aNumber);
+
+            if (!randomNumbers.includes(aNumber)) {
+                randomNumbers.push(aNumber);
+            }
+            
+        }
+
+        console.log(randomNumbers);
+
+
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }
+
+                
+       
+       
+        
         
     },
 
@@ -70,28 +99,4 @@ myButton.addEventListener ('click',
 
 
 
-// Genero 16 numeri casuali 
 
-const randomNumbers = [];
-
-const x = 16;
-
-
-while (randomNumbers.length < x) {
-    const aNumber = randomNumber(1, 100);
-    console.log('aNumber', aNumber, typeof aNumber);
-
-    if (!randomNumbers.includes(aNumber)) {
-        randomNumbers.push(aNumber);
-    }
-    
-}
-
-console.log(randomNumbers);
-
-/* 
-    FUNCTIONS
-*/
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
