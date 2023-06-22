@@ -30,11 +30,6 @@
 */
 
 
-
-
-// Creo una variabile per il mio container prendendolo  da HTML 
-
-
 // Creo una variabile per il buttone 
 const myButton = document.querySelector('button');
 
@@ -71,3 +66,32 @@ myButton.addEventListener ('click',
 
 )
 
+
+
+
+
+// Genero 16 numeri casuali 
+
+const randomNumbers = [];
+
+const x = 16;
+
+
+while (randomNumbers.length < x) {
+    const aNumber = randomNumber(1, 100);
+    console.log('aNumber', aNumber, typeof aNumber);
+
+    if (!randomNumbers.includes(aNumber)) {
+        randomNumbers.push(aNumber);
+    }
+    
+}
+
+console.log(randomNumbers);
+
+/* 
+    FUNCTIONS
+*/
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
