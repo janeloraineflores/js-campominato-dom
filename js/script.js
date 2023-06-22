@@ -49,52 +49,56 @@ myButton.addEventListener ('click',
             newCell.append(i);
             newCell.classList.add('cell');
                         
-
             gridContainer.append(newCell);
 
+
+          
+
             
-        }
+            // Genero 16 numeri casuali 
 
-        newCell.addEventListener ('click', function () {
-            if (randomNumbers.includes(this.innerHTML)) {
-                newCell.classList.add('red');
-            }
+            const randomNumbers = [];
 
-        });
+            const x = 16;
 
-        // Genero 16 numeri casuali 
+            while (randomNumbers.length < x) {
+                const aNumber = randomNumber(1, 100);
+                console.log('aNumber', aNumber, typeof aNumber);
 
-        const randomNumbers = [];
-
-        const x = 16;
-
-        while (randomNumbers.length < x) {
-            const aNumber = randomNumber(1, 100);
-            console.log('aNumber', aNumber, typeof aNumber);
-
-            if (!randomNumbers.includes(aNumber)) {
-                randomNumbers.push(aNumber);
-            }
-            
-        }
-
-        console.log(randomNumbers);
-
-
-        function randomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) ) + min;
-        }
-
+                if (!randomNumbers.includes(aNumber)) {
+                    randomNumbers.push(aNumber);
+                }
                 
-       
-       
+            }
+
+            console.log(randomNumbers);
+
+
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min;
+            }
+
+            
+            
+              newCell.addEventListener ('click', function () {
+
+                if (randomNumbers.includes(newCell)) {
+                    this.classList.add('red');
+                }
+
+                else {
+                    this.classList.add ('active');
+                }
+    
+
+            });
+    
+        }
         
-        
-    },
+    }
 
 
 )
-
 
 
 
