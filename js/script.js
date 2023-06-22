@@ -13,9 +13,8 @@
 
 
 /* 
------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
                         SECONDA PARTE CONSEGNA
-
 
     - Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: LE BOMBE
       (Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell'array delle bombe 
@@ -26,7 +25,8 @@
     - La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti 
       (ovvero quando ha rivelato tutte le celle che non sono bombe).
     - Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l'utente ha cliccato su una cella che non era una bomba.
--------------------------------------------------------------------------------------------------------
+    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
 
