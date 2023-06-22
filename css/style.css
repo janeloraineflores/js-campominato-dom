@@ -1,0 +1,65 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* GENERAL */ 
+
+body {
+    background-image: url(https://static7.depositphotos.com/1013195/740/i/600/depositphotos_7400740-stock-photo-minefield.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Common Pixel', sans-serif;                                          
+}
+
+
+/* HEADER */
+
+header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header > h1 {
+    margin-bottom: 20px;
+}
+
+header > button {
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+/* MAIN */
+
+.grid-container {
+    width: 750px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.grid-container > .cell{
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    border: 1px solid white;
+    background-color: lightslategray;
+    cursor: pointer;
+    color: white;
+}
+
+
+.grid-container > .cell.active{
+    background-color: rgba(255, 255, 255, 0.100);
+}
