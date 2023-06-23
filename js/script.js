@@ -41,6 +41,25 @@ myButton.addEventListener ('click',
         const gridContainer = document.querySelector('.grid-container');
         gridContainer.innerHTML = '';
 
+        //PER OGNI CLICK CREO IMMEDIATAMENTE LE BOMBE CASUALI
+        const randomNumbers = [];
+
+          const x = 16;
+
+          while (randomNumbers.length < x) {
+              const aNumber = randomNumber(1, 100);
+              
+
+              if (!randomNumbers.includes(aNumber)) {
+                  randomNumbers.push(aNumber);
+              }
+              
+          }
+
+         
+
+        ////////////////////////////////////////////////////  
+         
         // Creo un ciclo di numeri da 1 a 100
         for (let i = 1; i <= 100; i++) {
 
@@ -51,54 +70,42 @@ myButton.addEventListener ('click',
                         
             gridContainer.append(newCell);
 
-
-          
-
-            
-            // Genero 16 numeri casuali 
-
-            const randomNumbers = [];
-
-            const x = 16;
-
-            while (randomNumbers.length < x) {
-                const aNumber = randomNumber(1, 100);
-                console.log('aNumber', aNumber, typeof aNumber);
-
-                if (!randomNumbers.includes(aNumber)) {
-                    randomNumbers.push(aNumber);
-                }
-                
-            }
-
-            console.log(randomNumbers);
-
-
-            function randomNumber(min, max) {
-                return Math.floor(Math.random() * (max - min + 1) ) + min;
-            }
-
-            
-            
               newCell.addEventListener ('click', function () {
+               
 
-                if (randomNumbers.includes(newCell)) {
+                //METTO IL PIU DAVANTI  A newCell.innerHTML PERCHE è UNA STRINGA SE METTO IL + LO TRASFORMO IN NUM
+                if (randomNumbers.includes(+newCell.innerHTML)) {
                     this.classList.add('red');
+                    alert('HAI PERSO!')
                 }
 
                 else {
                     this.classList.add ('active');
+                    
                 }
     
 
             });
     
         }
+ 
+
+          
         
     }
 
 
 )
+
+
+
+
+// FUNCTIONS
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
 
 
 
